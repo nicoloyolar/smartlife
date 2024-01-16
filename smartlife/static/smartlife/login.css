@@ -1,41 +1,65 @@
-/* login.css */
-
-body {
-    background-color: #34495e;
-    color: #ecf0f1;
-    font-family: 'Arial', sans-serif;
+:root {
+    --color-primary: #3498db;
+    --color-accent: #f39c12;
+    --color-background: #ecf0f1;
+    --color-background-accent: #34495e;
+    --color-text: #2c3e50;
+    --color-text-accent: #e67e22;
 }
 
-div {
-    text-align: center;
-    margin-top: 50px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: var(--color-primary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
 }
 
 h2 {
-    color: #3498db;
+    color: var(--color-text);
 }
 
-form {
-    max-width: 300px;
-    margin: 0 auto;
+.login-form {
+    margin-top: 20px;
 }
 
-input[type="text"],
-input[type="password"] {
+.login-form input[type="text"],
+.login-form input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
 }
 
-button {
-    background-color: #f39c12;
-    color: #ecf0f1;
+.login-form input[type="text"]:hover,
+.login-form input[type="password"]:hover {
+    border: 1px solid var(--color-accent);
+}
+
+.login-button {
+    background-color: var(--color-accent);
+    color: var(--color-background);
     padding: 10px;
-    border: none;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e67e22;
+.login-button:hover {
+    background-color: rgba(var(--color-accent-rgb), 0.9);
+    border-color: var(--color-accent);
 }

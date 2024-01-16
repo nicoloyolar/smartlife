@@ -1,15 +1,13 @@
-{% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'static/smartlife/login.css' %}">
-{% endblock %}
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'smartlife/login.css' %}">
 
 {% block content %}
-<div style="text-align: center; margin-top: 50px;">
+<div class="login-container">
     <h2>Iniciar sesión</h2>
-    <form method="post" action="{% url 'login' %}">
+    <form class="login-form" method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Iniciar sesión</button>
+        <button type="submit" class="login-button">Iniciar sesión</button>
     </form>
 </div>
 {% endblock %}
